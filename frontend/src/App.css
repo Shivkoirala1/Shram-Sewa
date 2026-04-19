@@ -1,0 +1,7 @@
+/* Cleaning up default styles to use our custom index.css design system */
+.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
