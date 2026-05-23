@@ -1,5 +1,6 @@
 # श्रम सेवा (Shram Sewa) — Complete Setup Guide
 
+
 ## What's been completed
 - ✅ User auth (register, login, JWT, role-based routing)
 - ✅ Job postings with map pin (Leaflet/OpenStreetMap, no API key)
@@ -15,12 +16,14 @@
 
 ---
 
+
 ## Prerequisites
 - Node.js 18+
 - MongoDB Atlas account (free tier works)
 - Git
 
 ---
+
 
 ## Backend Setup
 
@@ -50,6 +53,7 @@ npm run dev
 
 ---
 
+
 ## Frontend Setup
 
 ```bash
@@ -60,6 +64,7 @@ npm run dev
 
 ---
 
+
 ## Test Credentials
 - Admin: use ADMIN_EMAIL and ADMIN_PASSWORD from .env
 - Register a Client account → get verified by admin → post jobs
@@ -67,12 +72,15 @@ npm run dev
 
 ---
 
+
 ## Key New Features Explained
 
 ### Geolocation (Near Me)
 - Hirers can pin job location on a Leaflet map when posting
 - Freelancers click "Jobs Near Me" → browser asks for GPS → shows jobs within 10km
 - Requires the 2dsphere MongoDB index (see above)
+
+
 
 ### Ratings & Reviews
 - Only works AFTER a job is marked Completed (green tick button in Manage Jobs)
