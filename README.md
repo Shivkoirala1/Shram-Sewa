@@ -14,7 +14,9 @@
 - ✅ Freelancer dashboard with real earnings data and reviews
 - ✅ Earnings page wired to real application data with chart
 
+
 ---
+
 
 
 ## Prerequisites
@@ -23,7 +25,6 @@
 - Git
 
 ---
-
 
 ## Backend Setup
 
@@ -50,9 +51,7 @@ Start backend:
 ```bash
 npm run dev
 ```
-
 ---
-
 
 ## Frontend Setup
 
@@ -61,7 +60,6 @@ cd frontend
 npm install
 npm run dev
 ```
-
 ---
 
 ## Test Credentials
