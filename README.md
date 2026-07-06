@@ -69,7 +69,7 @@ npm run dev
 
 ---
 
-## Key New Features Explained
+## Key New Features Explaination:
 
 ### Geolocation (Near Me)
 - Hirers can pin job location on a Leaflet map when posting
