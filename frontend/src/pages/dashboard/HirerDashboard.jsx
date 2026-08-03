@@ -40,7 +40,7 @@ const HirerDashboard = () => {
 
             // Fetch user's jobs
             const response = await axios.get(
-                'http://localhost:5000/api/jobs/my-jobs',
+                'https://shram-sewa.onrender.com/api/jobs/my-jobs',
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`

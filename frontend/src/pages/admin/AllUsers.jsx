@@ -23,7 +23,7 @@ const AllUsers = () => {
             }
 
             console.log("Fetching users...");
-            const res = await axios.get('http://localhost:5000/api/admin/users', {
+            const res = await axios.get('https://shram-sewa.onrender.com/api/admin/users', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             console.log("Users fetched:", res.data);
@@ -46,7 +46,7 @@ const AllUsers = () => {
         
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/admin/users/${id}`, {
+            await axios.delete(`https://shram-sewa.onrender.com/api/admin/users/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             toast.success("User deleted successfully");
@@ -70,7 +70,7 @@ const AllUsers = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/admin/users/${editingUser._id}/password`, 
+            await axios.put(`https://shram-sewa.onrender.com/api/admin/users/${editingUser._id}/password`, 
                 { password: newPassword },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

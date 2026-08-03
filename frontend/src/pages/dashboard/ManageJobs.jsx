@@ -88,7 +88,7 @@ const ManageJobs = () => {
             }
 
             const response = await axios.get(
-                'http://localhost:5000/api/jobs/my-jobs',
+                'https://shram-sewa.onrender.com/api/jobs/my-jobs',
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -119,7 +119,7 @@ const ManageJobs = () => {
             const token = localStorage.getItem('token');
 
             const response = await axios.get(
-                `http://localhost:5000/api/jobs/${job._id}`,
+                `https://shram-sewa.onrender.com/api/jobs/${job._id}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -160,7 +160,7 @@ const ManageJobs = () => {
             const token = localStorage.getItem('token');
 
             await axios.put(
-                `http://localhost:5000/api/jobs/${selectedJob._id}`,
+                `https://shram-sewa.onrender.com/api/jobs/${selectedJob._id}`,
                 editForm,
                 {
                     headers: {
@@ -186,12 +186,12 @@ const ManageJobs = () => {
             const token = localStorage.getItem('token');
             
             // Fetch full job with populated applicants to see who was approved
-            const fullJob = await axios.get(`http://localhost:5000/api/jobs/${job._id}`, {
+            const fullJob = await axios.get(`https://shram-sewa.onrender.com/api/jobs/${job._id}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
             // Mark complete in backend
-            await axios.post(`http://localhost:5000/api/jobs/${job._id}/complete`, {}, {
+            await axios.post(`https://shram-sewa.onrender.com/api/jobs/${job._id}/complete`, {}, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             
@@ -221,7 +221,7 @@ const ManageJobs = () => {
             const token = localStorage.getItem('token');
 
             await axios.post(
-                `http://localhost:5000/api/jobs/${selectedJob._id}/approve/${applicantId}`,
+                `https://shram-sewa.onrender.com/api/jobs/${selectedJob._id}/approve/${applicantId}`,
                 {},
                 { headers: { 'Authorization': `Bearer ${token}` } }
             );
@@ -239,7 +239,7 @@ const ManageJobs = () => {
             const token = localStorage.getItem('token');
 
             await axios.post(
-                `http://localhost:5000/api/jobs/${selectedJob._id}/reject/${applicantId}`,
+                `https://shram-sewa.onrender.com/api/jobs/${selectedJob._id}/reject/${applicantId}`,
                 {},
                 { headers: { 'Authorization': `Bearer ${token}` } }
             );
@@ -262,7 +262,7 @@ const ManageJobs = () => {
             const token = localStorage.getItem('token');
 
             await axios.delete(
-                `http://localhost:5000/api/jobs/${jobId}`,
+                `https://shram-sewa.onrender.com/api/jobs/${jobId}`,
                 { headers: { 'Authorization': `Bearer ${token}` } }
             );
 
@@ -287,7 +287,7 @@ const ManageJobs = () => {
             try {
                 const token = localStorage.getItem('token');
                 
-                await axios.post('http://localhost:5000/api/reviews', {
+                await axios.post('https://shram-sewa.onrender.com/api/reviews', {
                     jobId: reviewJob._id,
                     revieweeId: worker._id,
                     rating: reviewForm.rating,

@@ -84,7 +84,7 @@ const PostJob = () => {
 
             // Send job data to backend
             const response = await axios.post(
-                'http://localhost:5000/api/jobs',
+                'https://shram-sewa.onrender.com/api/jobs',
                 payload,
                 {
                     headers: {

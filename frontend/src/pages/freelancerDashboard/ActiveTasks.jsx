@@ -27,7 +27,7 @@ const ActiveTasks = () => {
             if (!token) return;
 
             // Fetch all applications
-            const response = await axios.get('http://localhost:5000/api/jobs/my-applications', {
+            const response = await axios.get('https://shram-sewa.onrender.com/api/jobs/my-applications', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
@@ -43,7 +43,7 @@ const ActiveTasks = () => {
             // Check which completed jobs already have a freelancer-to-client review
             const checkedReviews = await Promise.all(
                 completed.map(app =>
-                    axios.get(`http://localhost:5000/api/reviews/check?jobId=${app._id}&reviewType=freelancer-to-client`, {
+                    axios.get(`https://shram-sewa.onrender.com/api/reviews/check?jobId=${app._id}&reviewType=freelancer-to-client`, {
                         headers: { 'Authorization': `Bearer ${token}` }
                     })
                     .then(res => res.data.reviewed ? app._id : null)
@@ -98,14 +98,14 @@ const ActiveTasks = () => {
             const token = localStorage.getItem('token');
 
             // Fetch full job to get the Client's user ID (postedBy)
-            const jobRes = await axios.get(`http://localhost:5000/api/jobs/${reviewTarget.jobId}`, {
+            const jobRes = await axios.get(`https://shram-sewa.onrender.com/api/jobs/${reviewTarget.jobId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             
             const clientId = jobRes.data.postedBy?._id || jobRes.data.postedBy;
 
             // Submit Review
-            await axios.post('http://localhost:5000/api/reviews', {
+            await axios.post('https://shram-sewa.onrender.com/api/reviews', {
                 jobId: reviewTarget.jobId,
                 revieweeId: clientId,
                 rating: reviewForm.rating,

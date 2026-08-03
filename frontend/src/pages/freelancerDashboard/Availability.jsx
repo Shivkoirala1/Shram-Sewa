@@ -19,7 +19,7 @@ const Availability = () => {
             const token = localStorage.getItem('token');
             if (!token) return;
 
-            const response = await axios.get('http://localhost:5000/api/users/availability', {
+            const response = await axios.get('https://shram-sewa.onrender.com/api/users/availability', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setUnavailableDates(new Set(response.data.unavailableDates || []));
@@ -77,7 +77,7 @@ const Availability = () => {
             }
 
             await axios.put(
-                'http://localhost:5000/api/users/availability',
+                'https://shram-sewa.onrender.com/api/users/availability',
                 { unavailableDates: Array.from(unavailableDates) },
                 {
                     headers: { 'Authorization': `Bearer ${token}` }

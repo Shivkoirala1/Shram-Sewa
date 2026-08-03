@@ -12,7 +12,7 @@ const NotificationBell = () => {
         try {
             const token = localStorage.getItem('token');
             if (!token) return;
-            const res = await axios.get('http://localhost:5000/api/notifications', {
+            const res = await axios.get('https://shram-sewa.onrender.com/api/notifications', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setNotifications(res.data.notifications);
@@ -41,7 +41,7 @@ const NotificationBell = () => {
         if (!open && unreadCount > 0) {
             try {
                 const token = localStorage.getItem('token');
-                await axios.put('http://localhost:5000/api/notifications/read-all', {}, {
+                await axios.put('https://shram-sewa.onrender.com/api/notifications/read-all', {}, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setUnreadCount(0);

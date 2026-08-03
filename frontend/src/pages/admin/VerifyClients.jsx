@@ -15,7 +15,7 @@ const VerifyClients = () => {
         try {
             const token = localStorage.getItem('token');
             // Fetch users with verificationStatus=Pending
-            const res = await axios.get('http://localhost:5000/api/admin/users?role=Client&verificationStatus=Pending', {
+            const res = await axios.get('https://shram-sewa.onrender.com/api/admin/users?role=Client&verificationStatus=Pending', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setClients(res.data);
@@ -30,7 +30,7 @@ const VerifyClients = () => {
     const verifyUser = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/admin/verify/${id}`, {}, {
+            await axios.put(`https://shram-sewa.onrender.com/api/admin/verify/${id}`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             toast.success("Client verified successfully");
@@ -44,7 +44,7 @@ const VerifyClients = () => {
         if (!window.confirm("Are you sure you want to reject this client?")) return;
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/admin/reject/${id}`, {}, {
+            await axios.put(`https://shram-sewa.onrender.com/api/admin/reject/${id}`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             toast.success("Client rejected successfully");

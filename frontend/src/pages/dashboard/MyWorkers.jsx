@@ -18,7 +18,7 @@ const MyWorkers = () => {
                 }
 
                 // 1) Fetch hirer jobs
-                const jobsRes = await axios.get('http://localhost:5000/api/jobs/my-jobs', {
+                const jobsRes = await axios.get('https://shram-sewa.onrender.com/api/jobs/my-jobs', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
@@ -36,7 +36,7 @@ const MyWorkers = () => {
 
                 // 2) Fetch detailed job info to get populated applicant data
                 const detailPromises = jobIdsWithApproved.map((id) =>
-                    axios.get(`http://localhost:5000/api/jobs/${id}`, {
+                    axios.get(`https://shram-sewa.onrender.com/api/jobs/${id}`, {
                         headers: { Authorization: `Bearer ${token}` }
                     }).then((res) => res.data)
                 );

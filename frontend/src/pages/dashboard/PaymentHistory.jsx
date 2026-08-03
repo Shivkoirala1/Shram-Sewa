@@ -28,7 +28,7 @@ const PaymentHistory = () => {
                 }
 
                 // Hirer jobs; paid when job.status === 'PAID'
-                const response = await axios.get('http://localhost:5000/api/jobs/my-jobs', {
+                const response = await axios.get('https://shram-sewa.onrender.com/api/jobs/my-jobs', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 

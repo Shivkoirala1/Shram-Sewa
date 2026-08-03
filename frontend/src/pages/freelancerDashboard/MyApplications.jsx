@@ -27,7 +27,7 @@ const MyApplications = () => {
 
             // Fetch worker's applications from backend
             const response = await axios.get(
-                'http://localhost:5000/api/jobs/my-applications',
+                'https://shram-sewa.onrender.com/api/jobs/my-applications',
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`

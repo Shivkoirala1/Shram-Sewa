@@ -14,7 +14,7 @@ const VerifyFreelancers = () => {
     const fetchFreelancers = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/admin/users?role=Freelancer&verificationStatus=Pending', {
+            const res = await axios.get('https://shram-sewa.onrender.com/api/admin/users?role=Freelancer&verificationStatus=Pending', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setFreelancers(res.data);
@@ -29,7 +29,7 @@ const VerifyFreelancers = () => {
     const verifyUser = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/admin/verify/${id}`, {}, {
+            await axios.put(`https://shram-sewa.onrender.com/api/admin/verify/${id}`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             toast.success("Freelancer verified successfully");
@@ -43,7 +43,7 @@ const VerifyFreelancers = () => {
         if (!window.confirm("Are you sure you want to reject this freelancer?")) return;
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/admin/reject/${id}`, {}, {
+            await axios.put(`https://shram-sewa.onrender.com/api/admin/reject/${id}`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             toast.success("Freelancer rejected successfully");

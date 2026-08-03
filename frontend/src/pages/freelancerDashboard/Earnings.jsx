@@ -18,7 +18,7 @@ const Earnings = () => {
                     return;
                 }
 
-                const response = await axios.get('http://localhost:5000/api/jobs/my-applications', {
+                const response = await axios.get('https://shram-sewa.onrender.com/api/jobs/my-applications', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 

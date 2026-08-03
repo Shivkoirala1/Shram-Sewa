@@ -35,7 +35,7 @@ const FindWork = () => {
             setNearMe(false); // Reset near me status when fetching all jobs
             
             // Fetch all active jobs from backend
-            const response = await axios.get('http://localhost:5000/api/jobs?status=Active');
+            const response = await axios.get('https://shram-sewa.onrender.com/api/jobs?status=Active');
             setJobs(response.data);
             
         } catch (error) {
@@ -59,7 +59,7 @@ const FindWork = () => {
             async (pos) => {
                 try {
                     const { latitude: lat, longitude: lng } = pos.coords;
-                    const res = await axios.get(`http://localhost:5000/api/jobs/nearby?lat=${lat}&lng=${lng}&km=10`);
+                    const res = await axios.get(`https://shram-sewa.onrender.com/api/jobs/nearby?lat=${lat}&lng=${lng}&km=10`);
                     
                     setJobs(res.data);
                     setNearMe(true);
@@ -115,7 +115,7 @@ const FindWork = () => {
 
             // Perform the API call to apply
             await axios.post(
-                `http://localhost:5000/api/jobs/${applyTarget._id}/apply`,
+                `https://shram-sewa.onrender.com/api/jobs/${applyTarget._id}/apply`,
                 { 
                     bidAmount: applyForm.bidAmount || null, 
                     message: applyForm.message 

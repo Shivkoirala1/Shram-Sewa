@@ -20,7 +20,7 @@ const PaymentSuccess = () => {
 
       try {
         // Send the encoded data to your backend verify route
-        const response = await axios.get('http://localhost:5000/api/payment/verify', {
+        const response = await axios.get('https://shram-sewa.onrender.com/api/payment/verify', {
           params: { data }
         });
 

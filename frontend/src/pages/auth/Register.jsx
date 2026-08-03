@@ -61,7 +61,7 @@ const Register = () => {
 
         try {
             // send request
-            const response = await axios.post('http://localhost:5000/api/auth/register', payload);
+            const response = await axios.post('https://shram-sewa.onrender.com/api/auth/register', payload);
 
             toast.success('Registration Successful!');
             navigate('/login');

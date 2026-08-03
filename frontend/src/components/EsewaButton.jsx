@@ -8,7 +8,7 @@ const EsewaButton = ({ amount, jobId }) => {
       
       // Call your backend to get the signature
       const response = await axios.post(
-        'http://localhost:5000/api/payment/initiate',
+        'https://shram-sewa.onrender.com/api/payment/initiate',
         { amount, jobId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

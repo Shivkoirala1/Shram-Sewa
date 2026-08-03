@@ -43,7 +43,7 @@ const FreelancerProfile = () => {
     const fetchProfile = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:5000/api/auth/me', {
+            const response = await axios.get('https://shram-sewa.onrender.com/api/auth/me', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             
@@ -139,7 +139,7 @@ const FreelancerProfile = () => {
 
             const token = localStorage.getItem('token');
             const response = await axios.put(
-                'http://localhost:5000/api/auth/profile',
+                'https://shram-sewa.onrender.com/api/auth/profile',
                 {
                     fullName: editForm.fullName,
                     phone: editForm.phone,
